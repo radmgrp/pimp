@@ -103,7 +103,7 @@ class PassimpayApi:
             'hash': hash_value,
         }
 
-        response = requests.post(url, data=data, verify=False)
+        response = requests.post(url, data=data)
         payload['hash'] = hashlib.sha256(json.dumps(payload).encode()).hexdigest()
 
         headers = {'Content-Type': 'application/json'}
