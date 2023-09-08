@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module>
+	<name>
+		Passimpay
+	</name>
+	<settings>
+		<variable>secretKey</variable>
+		<name>Secret Key</name>
+	</settings>
+	<settings>
+		<variable>platformId</variable>
+		<name>Platform Id</name>
+	</settings>
+</module>

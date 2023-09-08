@@ -9,7 +9,7 @@ class nc_payment_system_passimpay extends nc_payment_system {
 
     protected $automatic = true;
 
-    protected $url_currency = 'http://www.cbr.ru/scripts/XML_daily.asp';
+    protected $url_currency = 'https://www.cbr.ru/scripts/XML_daily.asp';
 
     protected $accepted_currencies = array('RUR');
 
@@ -70,8 +70,6 @@ class nc_payment_system_passimpay extends nc_payment_system {
         curl_setopt($curl, CURLOPT_POST, true);
         curl_setopt($curl, CURLOPT_ENCODING, 'gzip');
         curl_setopt($curl, CURLOPT_FOLLOWLOCATION, true);
-        curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, false);
-        curl_setopt($curl, CURLOPT_SSL_VERIFYHOST, false);
         $result = curl_exec($curl);
         curl_close($curl);
 
@@ -179,8 +177,6 @@ class nc_payment_system_passimpay extends nc_payment_system {
                 curl_setopt($curl, CURLOPT_POST, true);
                 curl_setopt($curl, CURLOPT_ENCODING, 'gzip');
                 curl_setopt($curl, CURLOPT_FOLLOWLOCATION, true);
-                curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, false);
-                curl_setopt($curl, CURLOPT_SSL_VERIFYHOST, false);
                 $result = curl_exec($curl);
                 curl_close( $curl );
 
