@@ -14,16 +14,13 @@ class PassimpayApi:
 
     def _make_request(self, endpoint, data=None):
         if not self.secret_key:
-            raise Exception('Passimpay: secret key can not be empty.')
+            raise ValueError('Passimpay: secret key cannot be empty.')
 
         if not self.platform_id:
-            raise Exception('Passimpay: platform id can not be empty.')
+            raise ValueError('Passimpay: platform id cannot be empty.')
 
         url = f'{self.URL_BASE}/{endpoint}'
-        # payload = {'platform_id': self.platform_id}
-        #
-        # if data:
-        #     payload.update(data)
+
 
         payload_str = "&".join(f"{key}={value}" for key, value in data.items()).encode('utf-8')
 
